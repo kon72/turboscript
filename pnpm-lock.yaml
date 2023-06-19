@@ -16,31 +16,6 @@ importers:
       prettier: 2.8.8
       turbo: 1.10.3
 
-  apps/docs:
-    specifiers:
-      '@types/node': ^17.0.12
-      '@types/react': ^18.0.22
-      '@types/react-dom': ^18.0.7
-      eslint-config-custom: workspace:*
-      next: ^13.4.1
-      react: ^18.2.0
-      react-dom: ^18.2.0
-      tsconfig: workspace:*
-      typescript: ^4.5.3
-      ui: workspace:*
-    dependencies:
-      next: 13.4.1_biqbaboplfbrettd7655fr4n2y
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-      ui: link:../../packages/ui
-    devDependencies:
-      '@types/node': 17.0.45
-      '@types/react': 18.2.5
-      '@types/react-dom': 18.2.3
-      eslint-config-custom: link:../../packages/eslint-config-custom
-      tsconfig: link:../../packages/tsconfig
-      typescript: 4.9.5
-
   apps/web:
     specifiers:
       '@types/node': ^17.0.12
@@ -2449,6 +2424,7 @@ packages:
   /next/13.4.1_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-JBw2kAIyhKDpjhEWvNVoFeIzNp9xNxg8wrthDOtMctfn3EpqGCmW0FSviNyGgOSOSn6zDaX48pmvbdf6X2W9xA==}
     engines: {node: '>=16.8.0'}
+    hasBin: true
     peerDependencies:
       '@opentelemetry/api': ^1.1.0
       fibers: '>= 3.1.0'
@@ -2884,6 +2860,7 @@ packages:
 
   /rimraf/3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
+    hasBin: true
     dependencies:
       glob: 7.2.3
 
@@ -2941,6 +2918,7 @@ packages:
 
   /semver/6.3.0:
     resolution: {integrity: sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==}
+    hasBin: true
     dev: false
 
   /semver/7.5.0:
@@ -3209,6 +3187,7 @@ packages:
 
   /ts-node/10.9.1_t7dmilwzctzfywb3oy4dmby4b4:
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
+    hasBin: true
     peerDependencies:
       '@swc/core': '>=1.2.50'
       '@swc/wasm': '>=1.2.50'
