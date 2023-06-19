@@ -1,6 +1,6 @@
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
-  extends: ['next', 'turbo', 'prettier'],
+  extends: ['next/core-web-vitals', 'turbo', 'prettier'],
   plugins: ['prettier'],
   rules: {
     '@next/next/no-html-link-for-pages': 'off',
