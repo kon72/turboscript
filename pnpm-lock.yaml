@@ -24,7 +24,7 @@ importers:
         specifier: latest
         version: 1.10.3
 
-  apps/standalone:
+  apps/desktop:
     dependencies:
       electron-is-dev:
         specifier: ^2.0.0
