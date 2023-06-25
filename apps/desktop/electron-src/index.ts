@@ -1,11 +1,9 @@
 import {join} from 'path';
-import {format} from 'url';
 
 import {BrowserWindow, IpcMainEvent, app, ipcMain} from 'electron';
-import isDev from 'electron-is-dev';
 
 import {bindings} from 'hello-world-node';
-import {prepareNext} from './electron_next';
+import serveNextAt from 'next-electron-server';
 
 console.log();
 console.log('bindings:');
@@ -13,13 +11,13 @@ console.log(bindings);
 console.log(bindings.hello());
 console.log();
 
-// Prepare the renderer once the app is ready
-app.on('ready', async () => {
-  await prepareNext({
-    development: './apps/desktop/renderer',
-    production: './renderer',
-  });
+const NEXT_BASE_URL = 'next://app';
+serveNextAt(NEXT_BASE_URL, {
+  outputDir: './renderer/out',
+});
 
+// Prepare the renderer once the app is ready
+app.whenReady().then(async () => {
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
@@ -30,15 +28,7 @@ app.on('ready', async () => {
     },
   });
 
-  const url = isDev
-    ? 'http://localhost:8000/'
-    : format({
-        pathname: join(__dirname, '../renderer/out/index.html'),
-        protocol: 'file:',
-        slashes: true,
-      });
-
-  mainWindow.loadURL(url);
+  mainWindow.loadURL(NEXT_BASE_URL);
 });
 
 // Quit the app once all windows are closed
