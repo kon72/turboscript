@@ -1,11 +1,17 @@
-// Native
 import {join} from 'path';
 import {format} from 'url';
 
-// Packages
 import {BrowserWindow, IpcMainEvent, app, ipcMain} from 'electron';
 import isDev from 'electron-is-dev';
 import prepareNext from 'electron-next';
+
+import {bindings} from 'hello-world-node';
+
+console.log();
+console.log('bindings:');
+console.log(bindings);
+console.log(bindings.hello());
+console.log();
 
 // Prepare the renderer once the app is ready
 app.on('ready', async () => {

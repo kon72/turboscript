@@ -4,6 +4,7 @@
   "private": true,
   "main": "main/index.js",
   "scripts": {
+    "postinstall": "electron-builder install-app-deps",
     "dev": "pnpm run build:electron && electron .",
     "build:renderer": "next build renderer",
     "build:electron": "tsc -p electron-src",
@@ -14,7 +15,8 @@
   },
   "dependencies": {
     "electron-is-dev": "^2.0.0",
-    "electron-next": "^3.1.5"
+    "electron-next": "^3.1.5",
+    "hello-world-node": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^20.3.1",

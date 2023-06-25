@@ -18,6 +18,11 @@ build
 # misc
 .DS_Store
 *.pem
+dist/
+
+# node
+napi-v*/
+build-tmp-napi-v*/
 
 # debug
 npm-debug.log*
