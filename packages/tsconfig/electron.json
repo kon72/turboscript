@@ -11,9 +11,6 @@
     "module": "commonjs",
     "noEmit": false,
     "resolveJsonModule": true,
-    "target": "esnext",
-    "strict": false // TODO
-  },
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+    "target": "esnext"
+  }
 }

@@ -6,9 +6,6 @@
     "declaration": true,
     "lib": ["esnext"],
     "module": "commonjs",
-    "noEmit": false,
     "target": "esnext"
-  },
-  "include": ["**/*.ts"],
-  "exclude": ["node_modules"]
+  }
 }
