@@ -5,12 +5,13 @@ import {resolve} from 'app-root-path';
 import {app, protocol} from 'electron';
 import isDev from 'electron-is-dev';
 
-const devServer = async (dir, port) => {
+async function devServer(dir: string, port?: number) {
   // We need to load it here because the app's production
   // bundle shouldn't include it, which would result
   // in an error
   // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const next = require('next')({dev: true, dir});
+  const createNextServer: typeof import('next').default = require('next');
+  const next = createNextServer({dev: true, dir});
   const requestHandler = next.getRequestHandler();
 
   // Build the renderer code and watch the files
@@ -25,9 +26,9 @@ const devServer = async (dir, port) => {
     // Otherwise it keeps running on its own
     app.on('before-quit', () => server.close());
   });
-};
+}
 
-const adjustRenderer = directory => {
+function adjustRenderer(directory: string) {
   const prefixes = ['/_next', '/static'];
   const isWindows = process.platform === 'win32';
 
@@ -63,7 +64,7 @@ const adjustRenderer = directory => {
 
     callback({path: requestPath});
   });
-};
+}
 
 export interface Directories {
   production: string;
