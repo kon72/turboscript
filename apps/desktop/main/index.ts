@@ -1,9 +1,9 @@
 import {join} from 'path';
 
 import {BrowserWindow, IpcMainEvent, app, ipcMain} from 'electron';
+import serveNextAt from 'next-electron-server';
 
 import {bindings} from 'hello-world-node';
-import serveNextAt from 'next-electron-server';
 
 console.log();
 console.log('bindings:');
@@ -13,7 +13,7 @@ console.log();
 
 const NEXT_BASE_URL = 'next://app';
 serveNextAt(NEXT_BASE_URL, {
-  outputDir: './renderer/out',
+  outputDir: './out/renderer',
 });
 
 // Prepare the renderer once the app is ready

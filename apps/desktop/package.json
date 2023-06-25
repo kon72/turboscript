@@ -2,18 +2,18 @@
   "name": "desktop",
   "version": "1.0.0",
   "private": true,
-  "main": "main/index.js",
+  "main": "out/main/index.js",
   "scripts": {
     "postinstall": "electron-builder install-app-deps",
     "dev:renderer": "next dev --port 3000 renderer",
     "dev:main": "pnpm run build:main && electron .",
     "dev": "concurrently -k \"pnpm run dev:renderer\" \"pnpm run dev:main\"",
     "build:renderer": "next build renderer",
-    "build:main": "tsc -p electron-src",
+    "build:main": "tsc -p main",
     "build": "pnpm run build:renderer && pnpm run build:main",
     "pack-app": "pnpm run build && electron-builder --dir",
     "dist": "pnpm run build && electron-builder",
-    "type-check": "tsc -p ./renderer/tsconfig.json && tsc -p ./electron-src/tsconfig.json"
+    "type-check": "tsc -p ./renderer/tsconfig.json && tsc -p ./main/tsconfig.json"
   },
   "dependencies": {
     "hello-world-node": "workspace:*",
@@ -37,8 +37,7 @@
   "build": {
     "asar": true,
     "files": [
-      "main",
-      "renderer/out"
+      "out"
     ]
   }
 }
