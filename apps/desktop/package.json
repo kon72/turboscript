@@ -14,8 +14,8 @@
     "type-check": "tsc -p ./renderer/tsconfig.json && tsc -p ./electron-src/tsconfig.json"
   },
   "dependencies": {
+    "app-root-path": "^3.1.0",
     "electron-is-dev": "^2.0.0",
-    "electron-next": "^3.1.5",
     "hello-world-node": "workspace:*"
   },
   "devDependencies": {

@@ -3,9 +3,9 @@ import {format} from 'url';
 
 import {BrowserWindow, IpcMainEvent, app, ipcMain} from 'electron';
 import isDev from 'electron-is-dev';
-import prepareNext from 'electron-next';
 
 import {bindings} from 'hello-world-node';
+import {prepareNext} from './electron_next';
 
 console.log();
 console.log('bindings:');
@@ -15,7 +15,10 @@ console.log();
 
 // Prepare the renderer once the app is ready
 app.on('ready', async () => {
-  await prepareNext('./apps/desktop/renderer');
+  await prepareNext({
+    development: './apps/desktop/renderer',
+    production: './renderer',
+  });
 
   const mainWindow = new BrowserWindow({
     width: 800,

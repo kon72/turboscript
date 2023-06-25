@@ -26,12 +26,12 @@ importers:
 
   apps/desktop:
     dependencies:
+      app-root-path:
+        specifier: ^3.1.0
+        version: 3.1.0
       electron-is-dev:
         specifier: ^2.0.0
         version: 2.0.0
-      electron-next:
-        specifier: ^3.1.5
-        version: 3.1.5
       hello-world-node:
         specifier: workspace:*
         version: link:../../packages/hello-world-node
@@ -2060,13 +2060,6 @@ packages:
 
   /electron-is-dev@2.0.0:
     resolution: {integrity: sha512-3X99K852Yoqu9AcW50qz3ibYBWY79/pBhlMCab8ToEWS48R0T9tyxRiQhwylE7zQdXrMnx2JKqUJyMPmt5FBqA==}
-    dev: false
-
-  /electron-next@3.1.5:
-    resolution: {integrity: sha512-W/+iLrSJC0uCeUPanOeDfeNMp1dNCUNI/WP6Rna1cbPrYvJJF2HkpznvomFd8TPBA+XFEQXPZBYHXd4sr+YQEg==}
-    dependencies:
-      app-root-path: 3.1.0
-      electron-is-dev: 2.0.0
     dev: false
 
   /electron-publish@24.4.0:
