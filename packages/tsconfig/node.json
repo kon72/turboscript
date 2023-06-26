@@ -3,7 +3,6 @@
   "display": "Node",
   "extends": "./base.json",
   "compilerOptions": {
-    "declaration": true,
     "lib": ["esnext"],
     "module": "commonjs",
     "target": "esnext"
