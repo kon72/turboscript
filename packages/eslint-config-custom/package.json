@@ -2,7 +2,7 @@
   "name": "eslint-config-custom",
   "version": "0.0.0",
   "main": "index.js",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.60.0",
     "eslint-config-next": "^13.4.6",
