@@ -6,12 +6,13 @@
   "license": "Apache-2.0",
   "scripts": {
     "postinstall": "electron-builder install-app-deps",
+    "dev:main": "tsc -p main --watch",
     "dev:renderer": "next dev --port 3000 renderer",
-    "dev:main": "pnpm run build:main && electron .",
-    "dev": "concurrently -k \"pnpm run dev:renderer\" \"pnpm run dev:main\"",
-    "build:renderer": "next build renderer",
+    "dev:app": "cross-env ELECTRONMON_LOGLEVEL=error electronmon .",
+    "dev": "concurrently -n \"tsc,next,app\" -c \"blue.bold,cyan.bold,green.bold\" -k \"pnpm run dev:main\" \"pnpm run dev:renderer\" \"pnpm run dev:app\"",
     "build:main": "tsc -p main",
-    "build": "pnpm run build:renderer && pnpm run build:main",
+    "build:renderer": "next build renderer",
+    "build": "pnpm run build:main && pnpm run build:renderer",
     "pack-app": "pnpm run build && electron-builder --dir",
     "dist": "pnpm run build && electron-builder",
     "type-check": "tsc -p renderer && tsc -p main --noEmit"
@@ -25,8 +26,10 @@
     "@types/react": "^18.2.13",
     "@types/react-dom": "^18.2.6",
     "concurrently": "^8.2.0",
+    "cross-env": "^7.0.3",
     "electron": "25.1.1",
     "electron-builder": "^24.4.0",
+    "electronmon": "^2.0.2",
     "eslint-config-custom": "workspace:*",
     "next": "^13.4.6",
     "react": "^18.2.0",
@@ -39,6 +42,12 @@
     "asar": true,
     "files": [
       "out"
+    ]
+  },
+  "electronmon": {
+    "patterns": [
+      "!**/**",
+      "out/main/*"
     ]
   }
 }
