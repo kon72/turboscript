@@ -1,0 +1,10 @@
+{
+  "extends": "tsconfig/node.json",
+  "compilerOptions": {
+    "incremental": true,
+    "noEmit": false,
+    "outDir": "out"
+  },
+  "include": ["common/**/*.ts", "main/**/*.ts"],
+  "exclude": ["node_modules"]
+}

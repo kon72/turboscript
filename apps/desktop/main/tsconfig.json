@@ -1,9 +1,0 @@
-{
-  "extends": "tsconfig/electron_main.json",
-  "compilerOptions": {
-    "noEmit": false,
-    "outDir": "../out/main"
-  },
-  "include": ["**/*.ts"],
-  "exclude": ["node_modules"]
-}

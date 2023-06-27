@@ -4,11 +4,13 @@ import {BrowserWindow, IpcMainEvent, app, ipcMain} from 'electron';
 import serveNextAt from 'next-electron-server';
 
 import {bindings} from 'hello-world-node';
+import {foo} from '../common/foo';
 
 console.log();
 console.log('bindings:');
 console.log(bindings);
 console.log(bindings.hello());
+console.log('main: ' + foo());
 console.log();
 
 const NEXT_BASE_URL = 'next://app';
