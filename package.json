@@ -6,9 +6,11 @@
     "preinstall": "npx only-allow pnpm",
     "build": "turbo run build",
     "dev": "turbo run dev",
+    "test": "exit 0",
     "lint": "eslint \"**/*.{ts,tsx,js,jsx}\" --ignore-path .gitignore",
     "lint:fix": "eslint \"**/*.{ts,tsx,js,jsx}\"  --ignore-path .gitignore --fix",
-    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\" --ignore-path .gitignore"
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\" --ignore-path .gitignore",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\" --ignore-path .gitignore"
   },
   "devDependencies": {
     "@turbo/gen": "^1.10.3",
